@@ -7,15 +7,14 @@ def two_sum(nums,target):
     :param target: Integer target sum
     :return: List containing the indices of the two numbers that add up to the target
     """
-    num_to_index = {}
-    
-    for index, num in enumerate(nums):
-        complement = target - num
-        if complement in num_to_index:
-            return [num_to_index[complement], index]
-        num_to_index[num] = index
-    
-    return []  # Return an empty list if no solution is found
+    nums_dict = {}
+    for i , val in enumerate(nums):
+        next_val = target -val
+        if next_val in nums_dict:
+            return [nums_dict[next_val], i]
+        nums_dict[val] = i
+    print(nums_dict)
+    return []    
 
 
 print(two_sum([2, 7, 11, 15], 9))
