@@ -39,11 +39,60 @@ function isValid(s) {
   return stack.length === 0;
 }
 
-console.log(isValid("()")); // true
-console.log(isValid("()[]{}")); // true
-console.log(isValid("(]")); // false
-console.log(isValid("([)]")); // false
-console.log(isValid("{[]}")); // true
-console.log(isValid(")(")); // false
-console.log(isValid("((")); // false
-console.log(isValid("{[()]}")); // true
+// console.log(isValid("()")); // true
+// console.log(isValid("()[]{}")); // true
+// console.log(isValid("(]")); // false
+// console.log(isValid("([)]")); // false
+// console.log(isValid("{[]}")); // true
+// console.log(isValid(")(")); // false
+// console.log(isValid("((")); // false
+// console.log(isValid("{[()]}")); // true
+
+
+
+// function findDuplicate(arr) {
+//   let dup = [ ]
+//   for (let j =0;j<arr.length;j++){
+//     for(let i =j + 1;i<arr.length;i++){
+      
+//       if (arr[j] === arr[i]){
+//         if(dup.indexOf(arr[i]) === -1){
+//           dup.push(arr[i])
+
+//         }
+        
+//       }
+//     }
+     
+// }
+// return dup
+// }
+
+// console.log(findDuplicate([2, 5, 5, 5, 9, 9]))
+
+function firstNonRepeating(arr){
+  const numbers = [4, 5, 2, 5, 4, 7, 2, 9];
+
+const frequency = {};
+
+for (let i = 0; i < numbers.length; i++) {
+  const currentNumber = numbers[i];
+  if(`${currentNumber}` in frequency){
+    frequency[currentNumber] +=1 
+  }else{
+    frequency[currentNumber] = 1
+
+  }
+
+}
+
+for(let i=0 ; i<arr.length;i++){
+  if(frequency[arr[i]] === 1){
+    return arr[i]
+  }
+
+}
+return null
+}
+
+console.log(firstNonRepeating([4, 5, 2, 5, 4, 7, 2, 9]))
