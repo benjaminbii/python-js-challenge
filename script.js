@@ -97,3 +97,34 @@ return null
 
 // console.log(firstNonRepeating([4, 5, 2, 5, 4, 7, 2, 9]))
 
+
+
+
+function containsDuplicate(arr){
+  const seen = {};
+   for (let i = 0; i < arr.length; i++){
+    const currentNumber = arr[i];
+    if(currentNumber in seen){
+      return true
+    }else{
+      seen[currentNumber] = true
+    }
+   }
+   return false
+}
+
+
+function containsNearbyDuplicate(arr, k){
+  const seen = {};
+   for (let i = 0; i < arr.length; i++){
+    const currentNumber = arr[i];
+    if(currentNumber in seen ){
+      const distance = i - seen[currentNumber];
+      if(distance <= k){
+        return true
+      }
+    }
+    seen[currentNumber] = i;
+   }
+   return false
+}
