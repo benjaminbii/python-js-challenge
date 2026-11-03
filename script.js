@@ -77,7 +77,7 @@ const frequency = {};
 
 for (let i = 0; i < numbers.length; i++) {
   const currentNumber = numbers[i];
-  if(`${currentNumber}` in frequency){
+  if(currentNumber in frequency){
     frequency[currentNumber] +=1 
   }else{
     frequency[currentNumber] = 1
@@ -95,4 +95,5 @@ for(let i=0 ; i<arr.length;i++){
 return null
 }
 
-console.log(firstNonRepeating([4, 5, 2, 5, 4, 7, 2, 9]))
+// console.log(firstNonRepeating([4, 5, 2, 5, 4, 7, 2, 9]))
+
